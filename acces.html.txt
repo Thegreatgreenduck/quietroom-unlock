@@ -1,0 +1,34 @@
+<div class="video-container">
+  <iframe allowfullscreen frameborder="0" src="//www.youtube.com/embed/wvYWfWVXsYU" height="281" width="500"></iframe>
+</div>
+
+<p>This is a one of a kind true&nbsp;<strong class="Yjhzub" data-processed="true">psychological horror</strong></p>
+
+<!-- 🔐 Begin Login System -->
+<h3>🔒 Patient Portal</h3>
+<p>Enter your 3-digit clearance code to continue:</p>
+<input type="text" id="codeInput" class="input-box" maxlength="3" style="background: #222; color: #eee; border: 1px solid #444; padding: 10px; font-size: 1.2rem; width: 60px; text-align: center;">
+<br>
+<button onclick="checkCode()" class="button" style="background: #333; color: #ddd; border: 1px solid #555; padding: 10px 15px; cursor: pointer; margin-top: 10px;">Submit</button>
+
+<div id="hiddenFile" style="display: none; margin-top: 20px;">
+  <p>✅ Access Granted.</p>
+  <a href="YOUR_DOWNLOAD_LINK_HERE" download style="color: #aff;">📄 Download Patient Intake Form</a>
+</div>
+<p id="error" style="color: #c33; margin-top: 10px;"></p>
+
+<script>
+  function checkCode() {
+    const input = document.getElementById("codeInput").value.trim();
+    const hidden = document.getElementById("hiddenFile");
+    const error = document.getElementById("error");
+    if (input === "317") {
+      hidden.style.display = "block";
+      error.textContent = "";
+    } else {
+      error.textContent = "❌ Access Denied. Incorrect code.";
+      hidden.style.display = "none";
+    }
+  }
+</script>
+<!-- 🔐 End Login System -->
